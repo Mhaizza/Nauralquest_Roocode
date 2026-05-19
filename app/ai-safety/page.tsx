@@ -1,7 +1,6 @@
 "use client";
 
 import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
 
 export default function AISafetyPolicy() {
   return (
@@ -10,21 +9,6 @@ export default function AISafetyPolicy() {
 
       <main className="flex-grow pt-24 pb-16 px-4">
         <div className="max-w-4xl mx-auto">
-          {/* Header */}
-          <div className="mb-12">
-            <div className="text-xs text-cyan-500 tracking-[0.3em] font-bold mb-2 uppercase" style={{ fontFamily: "var(--font-mono)" }}>
-              // AI_SAFETY_PROTOCOL_01
-            </div>
-            <h1 className="text-4xl md:text-5xl font-black text-white mb-4" style={{ fontFamily: "var(--font-orbitron)" }}>
-              AI SAFETY <span className="neon-text-pink">POLICY</span>
-            </h1>
-            <div className="h-1 w-24 bg-gradient-to-r from-cyan-500 to-pink-500 rounded-full mb-6"></div>
-            <p className="text-gray-500 text-sm tracking-widest uppercase" style={{ fontFamily: "var(--font-mono)" }}>
-              Last Updated: May 2026
-            </p>
-          </div>
-
-          {/* Content */}
           <div className="glass-card rounded-3xl p-8 md:p-12 border border-cyan-500/10 space-y-8">
             <section>
               <p className="text-gray-300 leading-relaxed">
@@ -200,8 +184,6 @@ export default function AISafetyPolicy() {
           </div>
         </div>
       </main>
-
-      <Footer />
     </div>
   );
 }

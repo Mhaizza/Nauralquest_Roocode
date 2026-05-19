@@ -2,7 +2,6 @@ import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import PlayerStats from "@/components/PlayerStats";
 import MissionsSection from "@/components/MissionsSection";
-import Footer from "@/components/Footer";
 
 export default function Home() {
   return (

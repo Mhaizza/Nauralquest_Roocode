@@ -4,7 +4,7 @@ import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
-type Phase = "briefing" | "creating" | "evaluating" | "result" | "complete";
+type Phase = "briefing" | "input" | "creating" | "evaluating" | "result" | "complete";
 
 
 interface ScoreCriteria {

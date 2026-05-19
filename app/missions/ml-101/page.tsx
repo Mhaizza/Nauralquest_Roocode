@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 type Phase = "briefing" | "challenge" | "result" | "complete";
 type ChallengeState = "input" | "evaluating" | "scored";
@@ -542,6 +543,7 @@ export default function ML101MissionPage() {
           {phase === "complete" && <CompleteScreen totalXP={totalXP} />}
         </div>
       </div>
+      <Footer />
     </div>
   );
 }

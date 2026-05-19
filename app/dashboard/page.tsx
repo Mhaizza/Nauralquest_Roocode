@@ -3,6 +3,7 @@ import DashboardTopBar from "@/components/dashboard/DashboardTopBar";
 import DailyQuests from "@/components/dashboard/DailyQuests";
 import AICompanion from "@/components/dashboard/AICompanion";
 import QuickMissions from "@/components/dashboard/QuickMissions";
+import Footer from "@/components/Footer";
 import Link from "next/link";
 import { DAILY_QUESTS } from "@/lib/dailyQuestsData";
 
@@ -159,18 +160,7 @@ export default function DashboardPage() {
         </div>
       </main>
 
-      {/* Footer */}
-      <footer className="border-t border-cyan-500/10 py-6 px-4 mt-8">
-        <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3">
-          <div className="text-sm font-black tracking-widest" style={{ fontFamily: "var(--font-orbitron)" }}>
-            <span className="neon-text-cyan">NEURAL</span>
-            <span className="neon-text-pink">QUEST</span>
-          </div>
-          <p className="text-xs text-gray-600 tracking-widest" style={{ fontFamily: "var(--font-mono)" }}>
-            © 2077 NEURALQUEST SYSTEMS — DASHBOARD v0.1.0
-          </p>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }

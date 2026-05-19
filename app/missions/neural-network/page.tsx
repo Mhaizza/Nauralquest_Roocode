@@ -2,6 +2,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 type Tier = "S" | "A" | "B" | "C" | "D";
 type Phase = "briefing" | "playing" | "result" | "complete";
@@ -566,6 +567,7 @@ export default function NeuralNetworkMissionPage() {
           {phase === "complete" && <CompleteScreen totalXP={totalXP} />}
         </div>
       </div>
+      <Footer />
     </div>
   );
 }

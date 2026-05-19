@@ -2,8 +2,10 @@
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
-type Phase = "briefing" | "input" | "evaluating" | "result" | "complete";
+type Phase = "briefing" | "creating" | "evaluating" | "result" | "complete";
+
 
 interface ScoreCriteria {
   label: string;
@@ -626,6 +628,8 @@ export default function SocialPostMissionPage() {
           <MissionCompleteScreen grade={result.grade} />
         )}
       </div>
+
+      <Footer />
 
       <style>{`
         @keyframes spin { to { transform: rotate(360deg); } }

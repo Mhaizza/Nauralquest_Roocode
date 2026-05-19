@@ -164,3 +164,29 @@ export default function DashboardPage() {
     </div>
   );
 }
+import React, { useState } from 'react';
+import OnboardingAgreementModal from '@/components/OnboardingAgreementModal';
+
+export default function DashboardPage() {
+  const [onboarded, setOnboarded] = useState(false);
+
+  const handleAccept = () => {
+    setOnboarded(true);
+  };
+
+  if (!onboarded) {
+    return <OnboardingAgreementModal onAccept={handleAccept} />;
+  }
+
+  return (
+    <>
+      {/* Existing dashboard content here */}
+      <Navbar />
+      <DashboardTopBar />
+      <DailyQuests quests={DAILY_QUESTS} />
+      <AICompanion />
+      <QuickMissions />
+      <Footer />
+    </>
+  );
+}

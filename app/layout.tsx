@@ -43,21 +43,39 @@ export default function RootLayout({
               <span className="neon-text-pink">QUEST</span>
             </div>
             
-            <div className="flex flex-wrap justify-center gap-6">
+            <div className="flex flex-wrap justify-center gap-4">
               <a
                 href="/terms"
                 className="text-xs text-gray-500 hover:text-cyan-400 transition-colors tracking-widest uppercase"
                 style={{ fontFamily: "var(--font-mono)" }}
               >
-                Terms of Service
+                Terms
               </a>
+              <span className="text-xs text-gray-700">|</span>
               <a
                 href="/privacy"
                 className="text-xs text-gray-500 hover:text-cyan-400 transition-colors tracking-widest uppercase"
                 style={{ fontFamily: "var(--font-mono)" }}
               >
-                Privacy Policy
+                Privacy
               </a>
+              <span className="text-xs text-gray-700">|</span>
+              <a
+                href="/cookies"
+                className="text-xs text-gray-500 hover:text-cyan-400 transition-colors tracking-widest uppercase"
+                style={{ fontFamily: "var(--font-mono)" }}
+              >
+                Cookies
+              </a>
+              <span className="text-xs text-gray-700">|</span>
+              <a
+                href="/ai-safety"
+                className="text-xs text-gray-500 hover:text-cyan-400 transition-colors tracking-widest uppercase"
+                style={{ fontFamily: "var(--font-mono)" }}
+              >
+                AI Safety
+              </a>
+              <span className="text-xs text-gray-700">|</span>
               <a
                 href="mailto:support@mptanalytics.com"
                 className="text-xs text-gray-500 hover:text-cyan-400 transition-colors tracking-widest uppercase"

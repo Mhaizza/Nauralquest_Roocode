@@ -15,7 +15,6 @@ export default function Home() {
         <MissionsSection />
       </div>
 
-      <Footer />
     </main>
   );
 }

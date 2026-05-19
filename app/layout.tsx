@@ -33,63 +33,6 @@ export default function RootLayout({
         className={`${orbitron.variable} ${shareTechMono.variable} antialiased`}
       >
         {children}
-        <footer className="border-t border-cyan-500/10 py-8 px-4 mt-8">
-          <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
-            <div
-              className="text-sm font-black tracking-widest"
-              style={{ fontFamily: "var(--font-orbitron)" }}
-            >
-              <span className="neon-text-cyan">NEURAL</span>
-              <span className="neon-text-pink">QUEST</span>
-            </div>
-            
-            <div className="flex flex-wrap justify-center gap-4">
-              <a
-                href="/terms"
-                className="text-xs text-gray-500 hover:text-cyan-400 transition-colors tracking-widest uppercase"
-                style={{ fontFamily: "var(--font-mono)" }}
-              >
-                Terms
-              </a>
-              <span className="text-xs text-gray-700">|</span>
-              <a
-                href="/privacy"
-                className="text-xs text-gray-500 hover:text-cyan-400 transition-colors tracking-widest uppercase"
-                style={{ fontFamily: "var(--font-mono)" }}
-              >
-                Privacy
-              </a>
-              <span className="text-xs text-gray-700">|</span>
-              <a
-                href="/cookies"
-                className="text-xs text-gray-500 hover:text-cyan-400 transition-colors tracking-widest uppercase"
-                style={{ fontFamily: "var(--font-mono)" }}
-              >
-                Cookies
-              </a>
-              <span className="text-xs text-gray-700">|</span>
-              <a
-                href="/ai-safety"
-                className="text-xs text-gray-500 hover:text-cyan-400 transition-colors tracking-widest uppercase"
-                style={{ fontFamily: "var(--font-mono)" }}
-              >
-                AI Safety
-              </a>
-              <span className="text-xs text-gray-700">|</span>
-              <a
-                href="mailto:support@mptanalytics.com"
-                className="text-xs text-gray-500 hover:text-cyan-400 transition-colors tracking-widest uppercase"
-                style={{ fontFamily: "var(--font-mono)" }}
-              >
-                Contact
-              </a>
-            </div>
-            
-            <div className="flex flex-col items-center md:items-end gap-1">
-              <p className="text-xs text-gray-500">© 2026 NeuralQuest</p>
-            </div>
-          </div>
-        </footer>
         <Analytics />
         <SpeedInsights />
       </body>

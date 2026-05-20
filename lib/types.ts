@@ -4,6 +4,7 @@ export interface PlayerState {
   xp: number;
   level: number;
   credits: number;
+  gems: number;
   energy: number;
   lastEnergyAt: number;
   completed: string[];

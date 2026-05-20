@@ -329,25 +329,18 @@ export default function MissionsSection() {
   const completed = MISSIONS.filter((m) => m.completed).length;
 
   return (
-    <section className="py-20 px-4">
-      <div className="max-w-2xl mx-auto">
+    <section className="landing-section">
+      <div className="landing-container max-w-2xl">
 
-        {/* Section header */}
-        <div className="text-center mb-10">
-          <div
-            className="text-[9px] tracking-[0.3em] font-bold mb-2 animate-glow-pulse"
-            style={{ color: "#ff0080" }}
-          >
-            // MISSION_BOARD.sys
-          </div>
-          <h2
-            className="text-3xl sm:text-4xl font-black tracking-wider mb-3"
-            style={{ color: "#fff", textShadow: "0 0 30px rgba(255,0,128,0.4)" }}
-          >
-            ACTIVE <span style={{ color: "#ff0080" }}>MISSIONS</span>
+        <header className="landing-section-header">
+          <p className="landing-eyebrow" style={{ color: "#ff0080" }}>
+            Mission board
+          </p>
+          <h2 className="landing-heading">
+            Active <span className="text-pink-500" style={{ color: "#ff0080" }}>missions</span>
           </h2>
-          <p className="text-white/35 text-sm mb-4">
-            เลือกภารกิจ เรียนรู้ทักษะ AI และสะสม XP เพื่ออัพเลเวลตัวเอง
+          <p className="landing-subheading mx-auto mb-4">
+            Pick a quest, learn AI skills, and earn XP to level up.
           </p>
 
           {/* Mission status pills */}
@@ -383,7 +376,7 @@ export default function MissionsSection() {
               {MISSIONS.length - available} LOCKED
             </span>
           </div>
-        </div>
+        </header>
 
         {/* Mission grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-3">

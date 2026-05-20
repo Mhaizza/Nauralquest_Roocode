@@ -111,27 +111,20 @@ function SkillBar({ name, level, xp, color }: { name: string; level: number; xp:
 
 export default function PlayerStats() {
   return (
-    <section className="py-20 px-4">
-      <div className="max-w-2xl mx-auto">
+    <section className="landing-section">
+      <div className="landing-container max-w-2xl">
 
-        {/* Section header */}
-        <div className="text-center mb-10">
-          <div
-            className="text-[9px] tracking-[0.3em] font-bold mb-2 animate-glow-pulse"
-            style={{ color: "#00f5ff" }}
-          >
-            // PLAYER_PROFILE.sys
-          </div>
-          <h2
-            className="text-3xl sm:text-4xl font-black tracking-wider mb-3"
-            style={{ color: "#fff", textShadow: "0 0 30px rgba(0,245,255,0.5)" }}
-          >
-            YOUR <span style={{ color: "#00f5ff" }}>STATS</span>
-          </h2>
-          <p className="text-white/35 text-sm">
-            ติดตามความก้าวหน้า เก็บ XP และอัพเลเวลทักษะ AI ของคุณ
+        <header className="landing-section-header">
+          <p className="landing-eyebrow" style={{ color: "#00f5ff" }}>
+            Player profile
           </p>
-        </div>
+          <h2 className="landing-heading">
+            Your <span className="text-cyan-400">stats</span>
+          </h2>
+          <p className="landing-subheading mx-auto">
+            Track progress, earn XP, and level up your AI skills.
+          </p>
+        </header>
 
         {/* Player card */}
         <div

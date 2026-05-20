@@ -33,6 +33,170 @@ body {
   text-shadow: 0 0 10px var(--neon-pink), 0 0 20px var(--neon-pink), 0 0 40px var(--neon-pink);
 }
 
+/* Softer neon for landing — less eye strain */
+.neon-text-cyan-subtle {
+  color: var(--neon-cyan);
+  text-shadow: 0 0 8px rgba(0, 245, 255, 0.45), 0 0 20px rgba(0, 245, 255, 0.2);
+}
+
+.neon-text-pink-subtle {
+  color: var(--neon-pink);
+  text-shadow: 0 0 8px rgba(255, 0, 128, 0.4), 0 0 20px rgba(255, 0, 128, 0.18);
+}
+
+/* Landing page layout */
+.landing-container {
+  width: 100%;
+  max-width: 72rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@media (min-width: 640px) {
+  .landing-container {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+.landing-section {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+@media (min-width: 640px) {
+  .landing-section {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+}
+
+.landing-section-header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+@media (min-width: 640px) {
+  .landing-section-header {
+    margin-bottom: 3rem;
+  }
+}
+
+.landing-eyebrow {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+  font-family: var(--font-mono), monospace;
+}
+
+.landing-heading {
+  font-size: 1.75rem;
+  font-weight: 900;
+  color: #fff;
+  letter-spacing: 0.04em;
+  line-height: 1.2;
+  margin-bottom: 0.75rem;
+  font-family: var(--font-orbitron), sans-serif;
+}
+
+@media (min-width: 640px) {
+  .landing-heading {
+    font-size: 2.25rem;
+  }
+}
+
+.landing-subheading {
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.5);
+  line-height: 1.65;
+  max-width: 36rem;
+}
+
+@media (min-width: 640px) {
+  .landing-subheading {
+    font-size: 1rem;
+  }
+}
+
+.landing-card {
+  background: rgba(10, 10, 30, 0.65);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(0, 245, 255, 0.12);
+  border-radius: 1rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.landing-card:hover {
+  border-color: rgba(0, 245, 255, 0.22);
+  box-shadow: 0 0 24px rgba(0, 245, 255, 0.06);
+}
+
+/* Primary CTA — dominates visually */
+.btn-primary-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 2rem;
+  border-radius: 0.875rem;
+  font-size: 0.875rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-align: center;
+  color: #050510;
+  background: linear-gradient(135deg, #00f5ff, #00c4d4);
+  box-shadow:
+    0 0 24px rgba(0, 245, 255, 0.45),
+    0 4px 24px rgba(0, 245, 255, 0.2);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  font-family: var(--font-orbitron), sans-serif;
+}
+
+.btn-primary-cta:hover {
+  box-shadow:
+    0 0 32px rgba(0, 245, 255, 0.55),
+    0 6px 28px rgba(0, 245, 255, 0.28);
+  transform: translateY(-1px);
+}
+
+.btn-primary-cta:active {
+  transform: scale(0.98);
+}
+
+/* Secondary CTA — clearly subordinate */
+.btn-secondary-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 1.75rem;
+  border-radius: 0.875rem;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.75);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  transition: border-color 0.2s ease, color 0.2s ease, background 0.2s ease;
+  font-family: var(--font-orbitron), sans-serif;
+}
+
+.btn-secondary-cta:hover {
+  color: #00f5ff;
+  border-color: rgba(0, 245, 255, 0.35);
+  background: rgba(0, 245, 255, 0.06);
+}
+
+.btn-secondary-cta:active {
+  transform: scale(0.98);
+}
+
 .neon-text-purple {
   color: var(--neon-purple);
   text-shadow: 0 0 10px var(--neon-purple), 0 0 20px var(--neon-purple);

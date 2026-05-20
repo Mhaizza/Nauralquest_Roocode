@@ -1,20 +1,22 @@
 export default function DigitalServiceBlock() {
   return (
-    <section className="px-4 py-12" aria-labelledby="digital-service-heading">
-      <div className="max-w-2xl mx-auto">
+    <section
+      className="landing-section py-10 sm:py-12"
+      aria-labelledby="digital-service-heading"
+    >
+      <div className="landing-container">
         <div
           id="digital-service-heading"
-          className="glass-card rounded-2xl border-2 border-cyan-500/30 p-8 text-center space-y-4"
-          style={{ boxShadow: "0 0 24px rgba(0, 245, 255, 0.12)" }}
+          className="landing-card max-w-2xl mx-auto p-8 sm:p-10 text-center space-y-3"
         >
           <p
-            className="text-sm sm:text-base text-white/90 font-bold tracking-wide"
+            className="text-sm sm:text-base text-white/90 font-semibold tracking-wide"
             style={{ fontFamily: "var(--font-mono)" }}
           >
             This is a digital service.
           </p>
           <p
-            className="text-sm sm:text-base text-white/75"
+            className="text-sm sm:text-base text-white/65 leading-relaxed"
             style={{ fontFamily: "var(--font-mono)" }}
           >
             No physical goods are shipped.

@@ -1,18 +1,19 @@
 export default function AboutSection() {
   return (
-    <section className="px-4 py-12" aria-labelledby="about-heading">
-      <div className="max-w-3xl mx-auto text-center">
-        <h2
-          id="about-heading"
-          className="text-lg font-black tracking-widest text-cyan-400 mb-4 uppercase"
-          style={{ fontFamily: "var(--font-orbitron)" }}
-        >
-          About
-        </h2>
-        <p className="text-white/70 text-sm sm:text-base leading-relaxed max-w-2xl mx-auto">
-          About: MPT Analytics helps beginners learn AI through interactive and
-          practical learning experiences.
-        </p>
+    <section className="landing-section" aria-labelledby="about-heading">
+      <div className="landing-container">
+        <header className="landing-section-header max-w-2xl mx-auto">
+          <p className="landing-eyebrow" style={{ color: "#bf00ff" }}>
+            About MPT Analytics
+          </p>
+          <h2 id="about-heading" className="landing-heading text-2xl sm:text-3xl">
+            Built for beginners, designed like a game
+          </h2>
+          <p className="landing-subheading">
+            MPT Analytics helps beginners learn AI through interactive and practical
+            learning experiences — no dry lectures, just hands-on missions that stick.
+          </p>
+        </header>
       </div>
     </section>
   );

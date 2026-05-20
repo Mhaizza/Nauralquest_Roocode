@@ -1,13 +1,13 @@
 "use client";
 
-import Navbar from "@/components/Navbar";
-import DashboardTopBar from "@/components/dashboard/DashboardTopBar";
+import GameHeader from "@/components/dashboard/GameHeader";
 import DailyQuests from "@/components/dashboard/DailyQuests";
 import AICompanion from "@/components/dashboard/AICompanion";
 import QuickMissions from "@/components/dashboard/QuickMissions";
 import Footer from "@/components/Footer";
 import Link from "next/link";
 import { DAILY_QUESTS } from "@/lib/dailyQuestsData";
+import NarrativeManager from '@/components/narrative/NarrativeManager';
 
 function WorldMapTeaser() {
   const WORLDS = [
@@ -71,47 +71,14 @@ function WorldMapTeaser() {
   );
 }
 
-function QuickStats() {
-  const stats = [
-    { icon: "⚡", value: "2,450", label: "TOTAL XP", color: "text-cyan-400" },
-    { icon: "🏆", value: "12", label: "MISSIONS", color: "text-yellow-400" },
-    { icon: "🔥", value: "5", label: "STREAK", color: "text-orange-400" },
-    { icon: "💎", value: "340", label: "CREDITS", color: "text-purple-400" },
-  ];
-
-  return (
-    <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
-      {stats.map(({ icon, value, label, color }) => (
-        <div
-          key={label}
-          className="glass-card rounded-xl p-4 text-center border border-gray-800/50 hover:border-cyan-500/20 transition-colors"
-        >
-          <div className="text-2xl mb-1">{icon}</div>
-          <div className={`text-xl font-black ${color}`} style={{ fontFamily: "var(--font-orbitron)" }}>
-            {value}
-          </div>
-          <div className="text-xs text-gray-500 tracking-widest mt-0.5" style={{ fontFamily: "var(--font-mono)" }}>
-            {label}
-          </div>
-        </div>
-      ))}
-    </div>
-  );
-}
 
 export default function DashboardPage() {
   return (
     <div className="min-h-screen bg-[#050510] cyber-grid">
-      {/* Top navbar */}
-      <Navbar />
-
-      {/* Player top bar (below nav) */}
-      <div className="pt-16">
-        <DashboardTopBar />
-      </div>
+      <GameHeader />
 
       {/* Main content */}
-      <main className="max-w-7xl mx-auto px-4 py-6 space-y-6">
+      <main className="max-w-7xl mx-auto px-4 py-6 space-y-6 pt-24">
 
         {/* Welcome banner */}
         <div className="relative overflow-hidden rounded-2xl bg-gradient-to-r from-cyan-900/30 via-purple-900/20 to-pink-900/20 border border-cyan-500/15 p-5 sm:p-6">
@@ -121,14 +88,14 @@ export default function DashboardPage() {
           <div className="relative flex flex-col sm:flex-row sm:items-center justify-between gap-4">
             <div>
               <div className="text-xs text-gray-500 tracking-widest mb-1" style={{ fontFamily: "var(--font-mono)" }}>
-                // SYSTEM_WELCOME
+                {/* // SYSTEM_WELCOME */}
               </div>
               <h1 className="text-xl sm:text-2xl font-black text-white mb-1" style={{ fontFamily: "var(--font-orbitron)" }}>
-                ยินดีต้อนรับกลับมา, <span className="neon-text-cyan">AGENT_001</span>
+                ?????????????????, <span className="neon-text-cyan">AGENT_001</span>
               </h1>
               <p className="text-sm text-gray-400">
-                คุณมี <span className="text-yellow-400 font-bold">{DAILY_QUESTS.filter(q => !q.completed).length} daily quests</span> รอดำเนินการ และ{" "}
-                <span className="text-pink-400 font-bold">1 mission</span> กำลังดำเนินอยู่
+                ??? <span className="text-yellow-400 font-bold">{DAILY_QUESTS.filter(q => !q.completed).length} daily quests</span> ??????????? ???{" "}
+                <span className="text-pink-400 font-bold">1 mission</span> ?????????????
               </p>
             </div>
             <Link
@@ -140,9 +107,8 @@ export default function DashboardPage() {
             </Link>
           </div>
         </div>
-
-        {/* Quick Stats */}
-        <QuickStats />
+        
+        <NarrativeManager />
 
         {/* Main grid: left content + right sidebar */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">

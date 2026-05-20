@@ -42,14 +42,14 @@ export default function HeroSection() {
       {/* Ambient background — subtle */}
       <div className="absolute inset-0 cyber-grid opacity-[0.14] pointer-events-none" />
       <div
-        className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[min(100%,520px)] h-64 rounded-full blur-3xl pointer-events-none opacity-30 transition-colors duration-700"
+        className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[min(100%,520px)] h-56 rounded-full blur-3xl pointer-events-none opacity-20 transition-colors duration-700"
         style={{ background: hero.color }}
       />
 
-      <div className="landing-container relative z-10 py-14 sm:py-20 lg:py-24">
+      <div className="landing-container relative z-10 py-10 sm:py-14 lg:py-16">
         <div className="max-w-3xl mx-auto text-center">
           {/* Badge */}
-          <div className="inline-flex items-center gap-2 mb-6 px-3.5 py-1.5 rounded-full border border-cyan-500/25 bg-cyan-500/5">
+          <div className="inline-flex items-center gap-2 mb-4 px-3.5 py-1.5 rounded-full border border-cyan-500/20 bg-cyan-500/5">
             <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-glow-pulse" />
             <span
               className="text-[10px] sm:text-xs tracking-[0.2em] text-cyan-400/90 font-bold uppercase"
@@ -72,14 +72,14 @@ export default function HeroSection() {
           {/* Rotating tagline */}
           <p
             key={lineIndex}
-            className="text-sm sm:text-base text-white/55 mb-8 h-6 transition-opacity duration-500"
+            className="text-sm sm:text-base text-white/60 mb-5 h-6 transition-opacity duration-500"
             style={{ fontFamily: "var(--font-mono)" }}
           >
             {ROTATING_LINES[lineIndex]}
           </p>
 
           {/* Hero preview strip */}
-          <div className="flex justify-center items-end gap-2 mb-8">
+          <div className="flex justify-center items-end gap-2 mb-4">
             {HERO_PREVIEWS.map((h, i) => {
               const isActive = i === activeHero;
               return (
@@ -113,20 +113,20 @@ export default function HeroSection() {
             })}
           </div>
           <p
-            className="text-[10px] sm:text-xs font-bold tracking-[0.2em] mb-8 transition-colors duration-300"
+            className="text-[10px] sm:text-xs font-bold tracking-[0.2em] mb-5 transition-colors duration-300"
             style={{ color: hero.color, fontFamily: "var(--font-mono)" }}
           >
             {hero.name.toUpperCase()}
           </p>
 
           {/* Value prop */}
-          <p className="text-white/50 text-sm sm:text-base max-w-md mx-auto mb-10 leading-relaxed">
+          <p className="text-white/60 text-sm sm:text-base max-w-md mx-auto mb-7 leading-relaxed">
             Cyberpunk RPG-style AI learning — choose a hero, complete missions, and
             level up your skills.
           </p>
 
           {/* CTAs — primary dominates */}
-          <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 mb-12">
+          <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 mb-8">
             <Link href="/dashboard" className="btn-primary-cta sm:min-w-[220px]">
               ▶ Start Playing
             </Link>
@@ -136,7 +136,7 @@ export default function HeroSection() {
           </div>
 
           {/* Stats */}
-          <div className="grid grid-cols-3 gap-4 max-w-sm mx-auto pt-6 border-t border-white/8">
+          <div className="grid grid-cols-3 gap-3 max-w-sm mx-auto pt-5 border-t border-white/10">
             {[
               { value: "5", label: "Heroes" },
               { value: "6+", label: "Missions" },

@@ -1,7 +1,7 @@
 export default function DigitalServiceBlock() {
   return (
     <section
-      className="landing-section py-10 sm:py-12"
+      className="landing-section landing-section--compact"
       aria-labelledby="digital-service-heading"
     >
       <div className="landing-container">

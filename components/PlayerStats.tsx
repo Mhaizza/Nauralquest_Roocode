@@ -112,7 +112,7 @@ function SkillBar({ name, level, xp, color }: { name: string; level: number; xp:
 export default function PlayerStats() {
   return (
     <section className="landing-section">
-      <div className="landing-container max-w-2xl">
+      <div className="landing-container">
 
         <header className="landing-section-header">
           <p className="landing-eyebrow" style={{ color: "#00f5ff" }}>
@@ -121,18 +121,18 @@ export default function PlayerStats() {
           <h2 className="landing-heading">
             Your <span className="text-cyan-400">stats</span>
           </h2>
-          <p className="landing-subheading mx-auto">
+          <p className="landing-subheading">
             Track progress, earn XP, and level up your AI skills.
           </p>
         </header>
 
         {/* Player card */}
         <div
-          className="rounded-2xl overflow-hidden relative"
+          className="rounded-2xl overflow-hidden relative max-w-2xl mx-auto"
           style={{
-            background: "linear-gradient(140deg, rgba(0,245,255,0.08) 0%, rgba(5,5,16,0.97) 55%)",
-            border: "1px solid rgba(0,245,255,0.25)",
-            boxShadow: "0 0 40px rgba(0,245,255,0.08)",
+            background: "linear-gradient(140deg, rgba(0,245,255,0.06) 0%, rgba(5,5,16,0.97) 55%)",
+            border: "1px solid rgba(0,245,255,0.18)",
+            boxShadow: "0 0 28px rgba(0,245,255,0.05)",
           }}
         >
           {/* Scan line */}

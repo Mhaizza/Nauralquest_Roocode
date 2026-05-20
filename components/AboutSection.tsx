@@ -2,7 +2,7 @@ export default function AboutSection() {
   return (
     <section className="landing-section" aria-labelledby="about-heading">
       <div className="landing-container">
-        <header className="landing-section-header max-w-2xl mx-auto">
+        <header className="landing-section-header max-w-2xl mx-auto mb-0">
           <p className="landing-eyebrow" style={{ color: "#bf00ff" }}>
             About MPT Analytics
           </p>

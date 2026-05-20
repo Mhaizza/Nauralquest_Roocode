@@ -40,13 +40,13 @@ export default function FeaturesSection() {
           <h2 id="features-heading" className="landing-heading">
             Learn AI the <span className="text-cyan-400">fun way</span>
           </h2>
-          <p className="landing-subheading mx-auto">
+          <p className="landing-subheading">
             A premium learning experience wrapped in a cyberpunk RPG — structured,
             interactive, and built for beginners.
           </p>
         </header>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 lg:gap-5">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 lg:gap-4 max-w-4xl mx-auto">
           {FEATURES.map((feature) => (
             <article
               key={feature.title}

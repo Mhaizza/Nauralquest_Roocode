@@ -10,16 +10,20 @@ import CTASection from "@/components/CTASection";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-[#050510]">
+    <main className="min-h-screen bg-[#050510] bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,rgba(0,245,255,0.06),transparent),radial-gradient(ellipse_60%_40%_at_80%_100%,rgba(191,0,255,0.04),transparent)]">
       <Navbar />
 
       <div className="pt-16">
         <PlatformBanner />
         <HeroSection />
-        <FeaturesSection />
+        <div className="landing-section--alt">
+          <FeaturesSection />
+        </div>
         <PlayerStats />
         <DigitalServiceBlock />
-        <AboutSection />
+        <div className="landing-section--alt">
+          <AboutSection />
+        </div>
         <MissionsSection />
         <CTASection />
       </div>

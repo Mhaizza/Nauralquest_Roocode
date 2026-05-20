@@ -2,15 +2,15 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="border-t border-cyan-500/10 py-10 mt-4">
+    <footer className="border-t border-cyan-500/10 bg-white/[0.02] py-8">
       <div className="landing-container flex flex-col gap-6">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           <div
             className="text-sm font-black tracking-widest"
             style={{ fontFamily: "var(--font-orbitron)" }}
           >
-            <span className="neon-text-cyan">MPT</span>
-            <span className="neon-text-pink"> ANALYTICS</span>
+            <span className="neon-text-cyan-subtle">MPT</span>
+            <span className="neon-text-pink-subtle"> ANALYTICS</span>
           </div>
 
           <nav

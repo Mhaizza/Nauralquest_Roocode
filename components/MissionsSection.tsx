@@ -330,7 +330,7 @@ export default function MissionsSection() {
 
   return (
     <section className="landing-section">
-      <div className="landing-container max-w-2xl">
+      <div className="landing-container">
 
         <header className="landing-section-header">
           <p className="landing-eyebrow" style={{ color: "#ff0080" }}>
@@ -339,7 +339,7 @@ export default function MissionsSection() {
           <h2 className="landing-heading">
             Active <span className="text-pink-500" style={{ color: "#ff0080" }}>missions</span>
           </h2>
-          <p className="landing-subheading mx-auto mb-4">
+          <p className="landing-subheading mb-4">
             Pick a quest, learn AI skills, and earn XP to level up.
           </p>
 
@@ -379,14 +379,14 @@ export default function MissionsSection() {
         </header>
 
         {/* Mission grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-3 max-w-4xl mx-auto">
           {MISSIONS.map((mission) => (
             <MissionCard key={mission.id} mission={mission} />
           ))}
         </div>
 
         {/* View all button */}
-        <div className="text-center mt-8">
+        <div className="text-center mt-6">
           <button
             className="px-8 py-3 rounded-2xl text-[10px] font-black tracking-widest transition-all duration-200 active:scale-95 focus:outline-none"
             style={{

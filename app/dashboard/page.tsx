@@ -4,7 +4,6 @@ import GameHeader from "@/components/dashboard/GameHeader";
 import DailyQuests from "@/components/dashboard/DailyQuests";
 import AICompanion from "@/components/dashboard/AICompanion";
 import QuickMissions from "@/components/dashboard/QuickMissions";
-import Footer from "@/components/Footer";
 import Link from "next/link";
 import { DAILY_QUESTS } from "@/lib/dailyQuestsData";
 import NarrativeManager from '@/components/narrative/NarrativeManager';
@@ -127,8 +126,6 @@ export default function DashboardPage() {
           </div>
         </div>
       </main>
-
-      <Footer />
     </div>
   );
 }

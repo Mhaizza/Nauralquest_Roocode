@@ -2,7 +2,6 @@
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
 
 type Phase = "briefing" | "input" | "creating" | "evaluating" | "result" | "complete";
 
@@ -628,9 +627,6 @@ export default function SocialPostMissionPage() {
           <MissionCompleteScreen grade={result.grade} />
         )}
       </div>
-
-      <Footer />
-
       <style>{`
         @keyframes spin { to { transform: rotate(360deg); } }
       `}</style>

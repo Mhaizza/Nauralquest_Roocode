@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Orbitron, Share_Tech_Mono } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import Footer from "@/components/Footer";
 import "./globals.css";
 
 const orbitron = Orbitron({
@@ -17,9 +18,9 @@ const shareTechMono = Share_Tech_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "NEURAL QUEST — Learn AI Through Gaming",
+  title: "MPT Analytics — Learn AI Through Interactive Lessons",
   description:
-    "A cyberpunk AI learning platform. Complete missions, earn XP, and evolve your AI knowledge.",
+    "MPT Analytics is an online AI learning platform that teaches users how to use AI through interactive game-based lessons.",
 };
 
 export default function RootLayout({
@@ -33,6 +34,7 @@ export default function RootLayout({
         className={`${orbitron.variable} ${shareTechMono.variable} antialiased`}
       >
         {children}
+        <Footer />
         <Analytics />
         <SpeedInsights />
       </body>

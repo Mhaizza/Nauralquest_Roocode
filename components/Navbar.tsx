@@ -26,12 +26,20 @@ export default function Navbar() {
               <div className="absolute inset-1 bg-[#050510] rounded-sm rotate-45" />
               <div className="absolute inset-2 bg-cyan-400 rounded-sm rotate-45 opacity-60" />
             </div>
-            <span
-              className="text-lg font-black tracking-widest neon-text-cyan"
-              style={{ fontFamily: "var(--font-orbitron)" }}
-            >
-              NEURAL<span className="neon-text-pink">QUEST</span>
-            </span>
+            <div>
+              <span
+                className="text-lg font-black tracking-widest neon-text-cyan"
+                style={{ fontFamily: "var(--font-orbitron)" }}
+              >
+                NEURAL<span className="neon-text-pink">QUEST</span>
+              </span>
+              <div
+                className="text-[8px] tracking-[0.3em] text-cyan-500/50 font-bold uppercase leading-none -mt-0.5"
+                style={{ fontFamily: "var(--font-mono)" }}
+              >
+                BY MPT ANALYTICS
+              </div>
+            </div>
           </div>
 
           {/* Desktop Nav */}

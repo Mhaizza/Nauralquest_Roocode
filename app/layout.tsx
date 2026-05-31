@@ -18,9 +18,37 @@ const shareTechMono = Share_Tech_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "MPT Analytics — Learn AI Through Interactive Lessons",
+  title: {
+    default: "NEURAL QUEST — Learn AI Through Gaming | MPT Analytics",
+    template: "%s | NEURAL QUEST | MPT Analytics",
+  },
   description:
-    "MPT Analytics is an online AI learning platform that teaches users how to use AI through interactive game-based lessons.",
+    "MPT Analytics' NEURAL QUEST is a cyberpunk RPG-style AI learning platform. Complete missions, earn XP, level up heroes, and master AI skills through interactive gameplay.",
+  keywords: [
+    "AI learning", "gamified education", "MPT Analytics", "NEURAL QUEST",
+    "learn AI", "machine learning", "cyberpunk", "RPG learning",
+    "AI skills", "prompt engineering", "data science",
+  ],
+  openGraph: {
+    title: "NEURAL QUEST — Learn AI Through Gaming | MPT Analytics",
+    description:
+      "Cyberpunk RPG-style AI learning — complete missions, earn XP, and evolve your AI knowledge.",
+    url: "https://mptanalytics.com",
+    siteName: "MPT Analytics",
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "NEURAL QUEST — Learn AI Through Gaming",
+    description:
+      "Choose a hero, complete missions, and level up your AI skills. By MPT Analytics.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+  metadataBase: new URL("https://mptanalytics.com"),
 };
 
 export default function RootLayout({

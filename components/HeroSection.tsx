@@ -49,30 +49,14 @@ export default function HeroSection() {
       <div className="landing-container relative z-10 py-10 sm:py-14 lg:py-16">
         <div className="max-w-3xl mx-auto text-center">
           {/* Badge */}
-          <div className="flex items-center justify-center gap-2 mb-4 flex-wrap">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-cyan-500/20 bg-cyan-500/5">
-              <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-glow-pulse" />
-              <span
-                className="text-[10px] sm:text-xs tracking-[0.2em] text-cyan-400/90 font-bold uppercase"
-                style={{ fontFamily: "var(--font-mono)" }}
-              >
-                Beta access open
-              </span>
-            </div>
-            <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-cyan-500/10 bg-white/[0.03]">
-              <span
-                className="text-[9px] sm:text-[10px] tracking-[0.2em] text-gray-500 font-bold uppercase"
-                style={{ fontFamily: "var(--font-mono)" }}
-              >
-                Powered by
-              </span>
-              <span
-                className="text-[9px] sm:text-[10px] tracking-[0.2em] font-black uppercase"
-                style={{ fontFamily: "var(--font-orbitron)", color: "#00f5ff" }}
-              >
-                MPT ANALYTICS
-              </span>
-            </div>
+          <div className="inline-flex items-center gap-2 mb-4 px-3.5 py-1.5 rounded-full border border-cyan-500/20 bg-cyan-500/5">
+            <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-glow-pulse" />
+            <span
+              className="text-[10px] sm:text-xs tracking-[0.2em] text-cyan-400/90 font-bold uppercase"
+              style={{ fontFamily: "var(--font-mono)" }}
+            >
+              Beta access open
+            </span>
           </div>
 
           {/* Title */}

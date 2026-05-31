@@ -102,12 +102,6 @@ export default function Footer() {
               >
                 support@mptanalytics.com
               </a>
-              <div
-                className="text-[10px] text-gray-600 mt-1 tracking-widest"
-                style={{ fontFamily: "var(--font-mono)" }}
-              >
-                {new Date().getFullYear()} MPT Analytics
-              </div>
             </div>
           </div>
         </div>

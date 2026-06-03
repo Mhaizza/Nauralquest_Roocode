@@ -1,9 +1,14 @@
 import type { Metadata } from "next";
-import { Orbitron, Share_Tech_Mono } from "next/font/google";
+import { Inter, Orbitron, Share_Tech_Mono } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import Footer from "@/components/Footer";
 import "./globals.css";
+
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-sans",
+});
 
 const orbitron = Orbitron({
   subsets: ["latin"],
@@ -59,7 +64,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark" suppressHydrationWarning>
       <body
-        className={`${orbitron.variable} ${shareTechMono.variable} antialiased`}
+        className={`${inter.variable} ${orbitron.variable} ${shareTechMono.variable} antialiased`}
       >
         {children}
         <Footer />

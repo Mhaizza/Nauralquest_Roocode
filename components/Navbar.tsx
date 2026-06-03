@@ -5,10 +5,10 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 const NAV_LINKS = [
-  { label: "HOME", href: "/" },
-  { label: "HEROES", href: "/heroes" },
-  { label: "DASHBOARD", href: "/dashboard" },
-  { label: "MISSIONS", href: "#" },
+  { label: "Home", href: "/" },
+  { label: "Heroes", href: "/heroes" },
+  { label: "Dashboard", href: "/dashboard" },
+  { label: "Missions", href: "/#missions" },
 ];
 
 export default function Navbar() {
@@ -16,68 +16,66 @@ export default function Navbar() {
   const pathname = usePathname();
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 glass-card border-b border-cyan-500/20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
-          {/* Logo */}
-          <div className="flex items-center gap-3">
-            <div className="w-8 h-8 relative">
-              <div className="absolute inset-0 bg-cyan-400 rounded-sm rotate-45 opacity-80" />
-              <div className="absolute inset-1 bg-[#050510] rounded-sm rotate-45" />
-              <div className="absolute inset-2 bg-cyan-400 rounded-sm rotate-45 opacity-60" />
+    <nav className="fixed z-50 nav-floating">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6">
+        <div className="flex items-center justify-between h-14">
+          <Link href="/" className="flex items-center gap-2.5 cursor-pointer focus-ring rounded-lg">
+            <div className="w-7 h-7 relative shrink-0">
+              <div className="absolute inset-0 bg-[var(--nq-cyan)] rounded-sm rotate-45 opacity-70" />
+              <div className="absolute inset-1 bg-[var(--nq-bg)] rounded-sm rotate-45" />
+              <div className="absolute inset-2 bg-[var(--nq-cyan)] rounded-sm rotate-45 opacity-50" />
             </div>
             <div>
-              <span
-                className="text-lg font-black tracking-widest neon-text-cyan"
-                style={{ fontFamily: "var(--font-orbitron)" }}
-              >
+              <span className="text-base font-black tracking-wide font-display neon-text-cyan">
                 NEURAL<span className="neon-text-pink">QUEST</span>
               </span>
-              <div
-                className="text-[8px] tracking-[0.3em] text-cyan-500/50 font-bold uppercase leading-none -mt-0.5"
-                style={{ fontFamily: "var(--font-mono)" }}
-              >
-                BY MPT ANALYTICS
+              <div className="text-[9px] tracking-[0.2em] text-[var(--nq-muted)] font-mono-label leading-none -mt-0.5">
+                by MPT Analytics
               </div>
             </div>
+          </Link>
+
+          <div className="hidden md:flex items-center gap-6">
+            {NAV_LINKS.map(({ label, href }) => {
+              const isActive =
+                href === "/"
+                  ? pathname === "/"
+                  : href.startsWith("/#")
+                    ? pathname === "/"
+                    : pathname === href || pathname.startsWith(`${href}/`);
+
+              return (
+                <Link
+                  key={label}
+                  href={href}
+                  className={`text-sm font-medium transition-colors duration-200 cursor-pointer focus-ring rounded px-1 py-0.5 ${
+                    isActive
+                      ? "text-[var(--nq-cyan)]"
+                      : "text-[var(--nq-muted)] hover:text-[var(--nq-cyan)]"
+                  }`}
+                >
+                  {label}
+                </Link>
+              );
+            })}
           </div>
 
-          {/* Desktop Nav */}
-          <div className="hidden md:flex items-center gap-8">
-            {NAV_LINKS.map(({ label, href }) => (
-              <Link
-                key={label}
-                href={href}
-                className={`text-xs font-semibold tracking-widest transition-colors duration-200 ${
-                  pathname === href
-                    ? "neon-text-cyan"
-                    : "text-gray-400 hover:text-cyan-400"
-                }`}
-                style={{ fontFamily: "var(--font-orbitron)" }}
-              >
-                {label}
-              </Link>
-            ))}
-          </div>
-
-          {/* CTA Button */}
           <div className="hidden md:flex items-center gap-3">
-            <span
-              className="text-xs text-gray-500 tracking-widest"
-              style={{ fontFamily: "var(--font-mono)" }}
+            <span className="text-xs text-[var(--nq-muted)] font-mono-label">v0.1.0-beta</span>
+            <Link
+              href="/dashboard"
+              className="btn-neon-cyan px-4 py-2 text-xs font-bold tracking-wide rounded-lg cursor-pointer focus-ring"
             >
-              v0.1.0-BETA
-            </span>
-            <Link href="/dashboard" className="btn-neon-cyan px-5 py-2 text-xs font-bold tracking-widest rounded">
-              PLAY NOW
+              Play now
             </Link>
           </div>
 
-          {/* Mobile Menu Button */}
           <button
-            className="md:hidden text-cyan-400 p-2"
+            type="button"
+            className="md:hidden text-[var(--nq-cyan)] p-2 cursor-pointer focus-ring rounded-lg"
             onClick={() => setMenuOpen(!menuOpen)}
             aria-label="Toggle menu"
+            aria-expanded={menuOpen}
           >
             <div className="w-5 space-y-1">
               <span
@@ -94,24 +92,24 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Mobile Menu */}
       {menuOpen && (
-        <div className="md:hidden border-t border-cyan-500/20 bg-[#050510]/95 backdrop-blur-lg px-4 py-4 space-y-3">
+        <div className="md:hidden border-t border-[var(--nq-border)] px-4 py-4 space-y-2">
           {NAV_LINKS.map(({ label, href }) => (
             <Link
               key={label}
               href={href}
-              className={`block text-xs font-semibold tracking-widest py-2 transition-colors ${
-                pathname === href ? "neon-text-cyan" : "text-gray-400 hover:text-cyan-400"
-              }`}
-              style={{ fontFamily: "var(--font-orbitron)" }}
+              className="block text-sm font-medium py-2 text-[var(--nq-muted)] hover:text-[var(--nq-cyan)] transition-colors duration-200 cursor-pointer"
               onClick={() => setMenuOpen(false)}
             >
               {label}
             </Link>
           ))}
-          <Link href="/dashboard" className="btn-neon-cyan block w-full py-2 text-xs font-bold tracking-widest rounded mt-2 text-center">
-            PLAY NOW
+          <Link
+            href="/dashboard"
+            className="btn-neon-cyan block w-full py-2.5 text-xs font-bold tracking-wide rounded-lg mt-2 text-center cursor-pointer"
+            onClick={() => setMenuOpen(false)}
+          >
+            Play now
           </Link>
         </div>
       )}

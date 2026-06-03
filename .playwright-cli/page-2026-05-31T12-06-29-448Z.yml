@@ -1,0 +1,337 @@
+- generic [active] [ref=e1]:
+  - main [ref=e2]:
+    - navigation [ref=e3]:
+      - generic [ref=e5]:
+        - link "NEURALQUEST by MPT Analytics" [ref=e6] [cursor=pointer]:
+          - /url: /
+          - generic [ref=e11]:
+            - generic [ref=e12]: NEURALQUEST
+            - generic [ref=e13]: by MPT Analytics
+        - generic [ref=e14]:
+          - link "Home" [ref=e15] [cursor=pointer]:
+            - /url: /
+          - link "Heroes" [ref=e16] [cursor=pointer]:
+            - /url: /heroes
+          - link "Dashboard" [ref=e17] [cursor=pointer]:
+            - /url: /dashboard
+          - link "Missions" [ref=e18] [cursor=pointer]:
+            - /url: /#missions
+        - generic [ref=e19]:
+          - generic [ref=e20]: v0.1.0-beta
+          - link "Play now" [ref=e21] [cursor=pointer]:
+            - /url: /dashboard
+    - generic [ref=e22]:
+      - region "Platform description" [ref=e23]:
+        - generic [ref=e25]:
+          - paragraph [ref=e26]: MPT Analytics is an online AI learning platform that teaches users how to use AI through interactive game-based lessons.
+          - paragraph [ref=e27]:
+            - text: "Contact:"
+            - link "support@mptanalytics.com" [ref=e28] [cursor=pointer]:
+              - /url: mailto:support@mptanalytics.com
+      - generic [ref=e31]:
+        - generic [ref=e34]: System online — beta access open
+        - heading "NEURAL QUEST" [level=1] [ref=e35]:
+          - text: NEURAL
+          - text: QUEST
+        - paragraph [ref=e36]: Learn AI through combat
+        - paragraph [ref=e37]: แพลตฟอร์มเรียนรู้ AI สไตล์ Cyberpunk RPG — เลือกฮีโร่ ทำภารกิจ และอัปเลเวลทักษะ AI ของคุณ
+        - generic [ref=e38]:
+          - link "Select your hero" [ref=e39] [cursor=pointer]:
+            - /url: /heroes
+            - img [ref=e40]
+            - text: Select your hero
+          - link "Enter dashboard" [ref=e42] [cursor=pointer]:
+            - /url: /dashboard
+            - img [ref=e43]
+            - text: Enter dashboard
+        - generic [ref=e45]:
+          - paragraph [ref=e46]: Preview heroes
+          - generic [ref=e47]:
+            - button "Preview Prompt Mage" [pressed] [ref=e48] [cursor=pointer]:
+              - img [ref=e50]
+            - button "Preview Data Hunter" [ref=e53] [cursor=pointer]:
+              - img [ref=e55]
+            - button "Preview Auto Engineer" [ref=e59] [cursor=pointer]:
+              - img [ref=e61]
+            - button "Preview Neural Assassin" [ref=e72] [cursor=pointer]:
+              - img [ref=e74]
+            - button "Preview Creator Idol" [ref=e79] [cursor=pointer]:
+              - img [ref=e81]
+        - paragraph [ref=e84]: Prompt Mage
+        - generic [ref=e85]:
+          - generic [ref=e86]:
+            - generic [ref=e87]: "5"
+            - generic [ref=e88]: Heroes
+          - generic [ref=e89]:
+            - generic [ref=e90]: 6+
+            - generic [ref=e91]: Missions
+          - generic [ref=e92]:
+            - generic [ref=e93]: Free
+            - generic [ref=e94]: To play
+      - region "Learn AI the fun way" [ref=e96]:
+        - generic [ref=e97]:
+          - generic [ref=e98]:
+            - paragraph [ref=e99]: Why NeuralQuest
+            - heading "Learn AI the fun way" [level=2] [ref=e100]
+            - paragraph [ref=e101]: A premium learning experience wrapped in a cyberpunk RPG — structured, interactive, and built for beginners.
+          - generic [ref=e102]:
+            - article [ref=e103]:
+              - generic [ref=e104]: ⚔️
+              - generic [ref=e105]:
+                - heading "Mission-Based Learning" [level=3] [ref=e106]
+                - paragraph [ref=e107]: Complete cyberpunk quests that teach real AI skills — from prompts to neural networks.
+            - article [ref=e108]:
+              - generic [ref=e109]: 🧙
+              - generic [ref=e110]:
+                - heading "Choose Your Hero" [level=3] [ref=e111]
+                - paragraph [ref=e112]: Pick a class aligned with your goals. Each hero unlocks a unique learning path.
+            - article [ref=e113]:
+              - generic [ref=e114]: 📈
+              - generic [ref=e115]:
+                - heading "Track Your Progress" [level=3] [ref=e116]
+                - paragraph [ref=e117]: Earn XP, level skills, and visualize growth with a game-style player profile.
+            - article [ref=e118]:
+              - generic [ref=e119]: 🎮
+              - generic [ref=e120]:
+                - heading "Free to Start" [level=3] [ref=e121]
+                - paragraph [ref=e122]: Jump in without friction. Core missions and heroes are available at no cost.
+      - generic [ref=e124]:
+        - generic [ref=e125]:
+          - paragraph [ref=e126]: // player_profile.sys
+          - heading "Your stats" [level=2] [ref=e127]
+          - paragraph [ref=e128]: ติดตามความก้าวหน้า สะสม XP และอัปเลเวลทักษะ AI ของคุณ
+        - generic [ref=e130]:
+          - generic [ref=e131]:
+            - img [ref=e133]
+            - generic [ref=e136]:
+              - generic [ref=e137]: Active hero · Free AI Collective
+              - generic [ref=e138]: Prompt Mage
+              - generic [ref=e139]: “Weaver of Words”
+            - link "Change" [ref=e140] [cursor=pointer]:
+              - /url: /heroes
+          - generic [ref=e141]:
+            - generic [ref=e142]:
+              - generic [ref=e143]:
+                - generic [ref=e144]:
+                  - img [ref=e146]
+                  - generic [ref=e149]: "7"
+                - generic [ref=e150]:
+                  - generic [ref=e151]:
+                    - generic [ref=e152]: AGENT_001
+                    - generic [ref=e153]: Hacker
+                  - generic [ref=e154]: Level 7 — Neural Initiate
+                  - generic [ref=e155]:
+                    - generic [ref=e156]:
+                      - generic [ref=e157]: XP progress
+                      - generic [ref=e158]: 2,450 / 5,000
+                    - generic [ref=e161]: 550 XP to level 8
+              - generic [ref=e162]:
+                - img [ref=e163]
+                - generic [ref=e165]:
+                  - generic [ref=e166]: 4/5
+                  - generic [ref=e167]: Energy
+            - generic [ref=e168]:
+              - generic [ref=e169]: Skill tree
+              - generic [ref=e172]:
+                - generic [ref=e174]:
+                  - generic [ref=e175]: Prompt Engineering
+                  - generic [ref=e176]: 4/5
+                - generic [ref=e180]:
+                  - generic [ref=e181]: Machine Learning
+                  - generic [ref=e182]: 3/5
+                - generic [ref=e186]:
+                  - generic [ref=e187]: Data Science
+                  - generic [ref=e188]: 2/5
+                - generic [ref=e192]:
+                  - generic [ref=e193]: Neural Networks
+                  - generic [ref=e194]: 1/5
+          - generic [ref=e198]:
+            - generic [ref=e199]: Achievements
+            - generic [ref=e202]:
+              - generic [ref=e203]:
+                - img [ref=e204]
+                - generic [ref=e210]: "12"
+                - generic [ref=e211]: Missions done
+              - generic [ref=e212]:
+                - img [ref=e213]
+                - generic [ref=e215]: "6"
+                - generic [ref=e216]: Day streak
+              - generic [ref=e217]:
+                - img [ref=e218]
+                - generic [ref=e221]: "340"
+                - generic [ref=e222]: Credits
+      - region "This is a digital service. No physical goods are shipped. Users receive instant access after payment." [ref=e223]:
+        - generic [ref=e225]:
+          - paragraph [ref=e226]: This is a digital service.
+          - paragraph [ref=e227]: No physical goods are shipped.
+          - paragraph [ref=e228]: Users receive instant access after payment.
+      - region "Built for beginners, designed like a game" [ref=e230]:
+        - generic [ref=e232]:
+          - paragraph [ref=e233]: About MPT Analytics
+          - heading "Built for beginners, designed like a game" [level=2] [ref=e234]
+          - paragraph [ref=e235]: MPT Analytics helps beginners learn AI through interactive and practical learning experiences — no dry lectures, just hands-on missions that stick.
+      - generic [ref=e237]:
+        - generic [ref=e238]:
+          - paragraph [ref=e239]: // mission_board.sys
+          - heading "Active missions" [level=2] [ref=e240]
+          - paragraph [ref=e241]: เลือกภารกิจ เรียนรู้ทักษะ AI และสะสม XP เพื่ออัปเลเวล
+          - generic [ref=e242]:
+            - generic [ref=e243]: 4 available
+            - generic [ref=e244]: 1 completed
+            - generic [ref=e245]: 2 locked
+        - generic [ref=e246]:
+          - generic [ref=e249] [cursor=pointer]:
+            - img [ref=e251]
+            - generic [ref=e259]:
+              - generic [ref=e260]:
+                - generic [ref=e261]: M-001
+                - generic [ref=e262]: Easy
+                - generic [ref=e263]:
+                  - img [ref=e264]
+                  - text: Done
+              - heading "What is AI?" [level=3] [ref=e266]
+              - paragraph [ref=e267]: ค้นพบโลกของ AI — เรียนรู้พื้นฐานและแนวคิดหลักที่จะเปลี่ยนโลก
+              - generic [ref=e268]:
+                - generic [ref=e269]: AI basics
+                - generic [ref=e270]: Intro
+              - generic [ref=e271]:
+                - generic [ref=e272]:
+                  - img [ref=e273]
+                  - generic [ref=e275]: +100 XP
+                - link "Replay" [ref=e276]:
+                  - /url: /missions/what-is-ai
+          - generic [ref=e279] [cursor=pointer]:
+            - img [ref=e281]
+            - generic [ref=e292]:
+              - generic [ref=e293]:
+                - generic [ref=e294]: M-002
+                - generic [ref=e295]: Easy
+              - heading "Machine Learning 101" [level=3] [ref=e296]
+              - paragraph [ref=e297]: เข้าใจวิธีที่ Machine Learning ทำงาน ผ่านตัวอย่างจริงที่เข้าใจได้ง่าย
+              - generic [ref=e298]:
+                - generic [ref=e299]: ML
+                - generic [ref=e300]: Training data
+              - generic [ref=e301]:
+                - generic [ref=e302]:
+                  - img [ref=e303]
+                  - generic [ref=e305]: +200 XP
+                - link "Start" [ref=e306]:
+                  - /url: /missions/ml-101
+          - generic [ref=e309] [cursor=pointer]:
+            - img [ref=e311]
+            - generic [ref=e314]:
+              - generic [ref=e315]:
+                - generic [ref=e316]: M-003
+                - generic [ref=e317]: Medium
+              - heading "Neural Network Basics" [level=3] [ref=e318]
+              - paragraph [ref=e319]: สำรวจโครงสร้าง Neural Network และเข้าใจว่า AI 'เรียนรู้' ได้อย่างไร
+              - generic [ref=e320]:
+                - generic [ref=e321]: Neural net
+                - generic [ref=e322]: Deep learning
+              - generic [ref=e323]:
+                - generic [ref=e324]:
+                  - img [ref=e325]
+                  - generic [ref=e327]: +350 XP
+                - link "Start" [ref=e328]:
+                  - /url: /missions/neural-network
+          - generic [ref=e331] [cursor=pointer]:
+            - img [ref=e333]
+            - generic [ref=e335]:
+              - generic [ref=e336]:
+                - generic [ref=e337]: M-004
+                - generic [ref=e338]: Medium
+              - heading "Social AI Agent" [level=3] [ref=e339]
+              - paragraph [ref=e340]: เขียน prompt ให้ AI สร้างโพสต์โซเชียลมีเดีย — ภารกิจแรกที่เล่นได้!
+              - generic [ref=e341]:
+                - generic [ref=e342]: LLM
+                - generic [ref=e343]: Prompts
+                - generic [ref=e344]: Playable
+              - generic [ref=e345]:
+                - generic [ref=e346]:
+                  - img [ref=e347]
+                  - generic [ref=e349]: +500 XP
+                - link "Start" [ref=e350]:
+                  - /url: /missions/social-post
+          - generic [ref=e353]:
+            - img [ref=e355]
+            - generic [ref=e358]:
+              - generic [ref=e359]:
+                - generic [ref=e360]: M-005
+                - generic [ref=e361]: Hard
+              - heading "AI Ethics Protocol" [level=3] [ref=e362]
+              - paragraph [ref=e363]: ทำความเข้าใจจริยธรรม bias และความรับผิดชอบในยุค AI
+              - generic [ref=e364]:
+                - generic [ref=e365]: Ethics
+                - generic [ref=e366]: Bias
+                - generic [ref=e367]: Safety
+              - generic [ref=e369]:
+                - img [ref=e370]
+                - generic [ref=e372]: +400 XP
+          - generic [ref=e375]:
+            - img [ref=e377]
+            - generic [ref=e380]:
+              - generic [ref=e381]:
+                - generic [ref=e382]: BOSS-01
+                - generic [ref=e383]: Boss
+              - 'heading "AI BOSS: Build a Chatbot" [level=3] [ref=e384]'
+              - paragraph [ref=e385]: สร้าง AI Chatbot ของคุณเองตั้งแต่ต้น — การทดสอบขั้นสูงสุดของทักษะคุณ
+              - generic [ref=e386]:
+                - generic [ref=e387]: Project
+                - generic [ref=e388]: Chatbot
+                - generic [ref=e389]: Final
+              - generic [ref=e391]:
+                - img [ref=e392]
+                - generic [ref=e394]: +1000 XP
+      - region "Start your neural journey" [ref=e395]:
+        - generic [ref=e398]:
+          - paragraph [ref=e399]: Ready to begin
+          - heading "Start your neural journey" [level=2] [ref=e400]
+          - paragraph [ref=e401]: Enter the dashboard, pick a hero, and complete your first mission in minutes. No install required.
+          - generic [ref=e402]:
+            - link "▶ Start Playing" [ref=e403] [cursor=pointer]:
+              - /url: /dashboard
+            - link "Choose Hero" [ref=e404] [cursor=pointer]:
+              - /url: /heroes
+          - paragraph [ref=e405]:
+            - text: Questions?
+            - link "support@mptanalytics.com" [ref=e406] [cursor=pointer]:
+              - /url: mailto:support@mptanalytics.com
+  - contentinfo [ref=e407]:
+    - generic [ref=e409]:
+      - generic [ref=e410]:
+        - generic [ref=e411]:
+          - generic [ref=e412]: MPT ANALYTICS
+          - generic [ref=e413]: NEURAL QUEST
+        - paragraph [ref=e415]: AI learning platform powered by gamification. Complete missions, earn XP, and evolve.
+      - generic [ref=e416]:
+        - generic [ref=e417]: // Legal
+        - generic [ref=e418]:
+          - link "Terms of Service" [ref=e419] [cursor=pointer]:
+            - /url: /terms
+          - link "Privacy Policy" [ref=e420] [cursor=pointer]:
+            - /url: /privacy
+          - link "Refund Policy" [ref=e421] [cursor=pointer]:
+            - /url: /refund
+          - link "Cookies" [ref=e422] [cursor=pointer]:
+            - /url: /cookies
+      - generic [ref=e423]:
+        - generic [ref=e424]: // About
+        - generic [ref=e425]:
+          - link "Community" [ref=e426] [cursor=pointer]:
+            - /url: /community
+          - link "AI Safety" [ref=e427] [cursor=pointer]:
+            - /url: /ai-safety
+          - link "Disclaimer" [ref=e428] [cursor=pointer]:
+            - /url: /disclaimer
+      - generic [ref=e429]:
+        - generic [ref=e430]: // Contact
+        - link "support@mptanalytics.com" [ref=e432] [cursor=pointer]:
+          - /url: mailto:support@mptanalytics.com
+    - generic [ref=e434]:
+      - generic [ref=e435]: © 2026 MPT Analytics — All rights reserved
+      - generic [ref=e436]:
+        - generic [ref=e437]: Made with ❤️ for AI learners
+        - generic [ref=e439]: v0.1.0-BETA
+  - button "Open Next.js Dev Tools" [ref=e445] [cursor=pointer]:
+    - img [ref=e446]
+  - alert [ref=e449]

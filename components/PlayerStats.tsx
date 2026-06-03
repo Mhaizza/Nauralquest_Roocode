@@ -2,328 +2,264 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-
-// ─── Data ─────────────────────────────────────────────────────────────────────
+import { Bot, Flame, Gem, Trophy, Wand2, Zap } from "lucide-react";
 
 const ACTIVE_HERO = {
-  avatar: "🧙‍♂️",
-  name: "PROMPT MAGE",
+  Icon: Wand2,
+  name: "Prompt Mage",
   title: "Weaver of Words",
-  color: "#00f5ff",
-  glowColor: "rgba(0,245,255,0.5)",
-  faction: "FREE AI COLLECTIVE",
-  factionIcon: "⚡",
-  factionColor: "#00f5ff",
-  rarity: "Epic",
+  color: "#00e5ff",
+  faction: "Free AI Collective",
 };
 
 const SKILLS = [
-  { name: "PROMPT ENGINEERING", level: 4, xp: 80, color: "#00f5ff" },
-  { name: "MACHINE LEARNING", level: 3, xp: 60, color: "#bf00ff" },
-  { name: "DATA SCIENCE", level: 2, xp: 40, color: "#00ff88" },
-  { name: "NEURAL NETWORKS", level: 1, xp: 20, color: "#ff0080" },
+  { name: "Prompt Engineering", level: 4, max: 5, color: "#00e5ff" },
+  { name: "Machine Learning", level: 3, max: 5, color: "#e040fb" },
+  { name: "Data Science", level: 2, max: 5, color: "#00ff88" },
+  { name: "Neural Networks", level: 1, max: 5, color: "#ff0080" },
 ];
 
 const ACHIEVEMENTS = [
-  { icon: "🏆", value: "12", label: "MISSIONS DONE" },
-  { icon: "🔥", value: "5", label: "DAY STREAK" },
-  { icon: "💎", value: "340", label: "CREDITS" },
+  { Icon: Trophy, value: "12", label: "Missions done" },
+  { Icon: Flame, value: "6", label: "Day streak" },
+  { Icon: Gem, value: "340", label: "Credits" },
 ];
 
-// ─── Sub-components ───────────────────────────────────────────────────────────
-
-function SectionLabel({ text, color }: { text: string; color: string }) {
+function SectionLabel({ text }: { text: string }) {
   return (
-    <div
-      className="text-[9px] font-bold tracking-[0.22em] mb-3 flex items-center gap-2"
-      style={{ color }}
-    >
-      <span className="inline-block w-4 h-px" style={{ background: color }} />
+    <div className="text-xs font-semibold tracking-wide mb-3 flex items-center gap-2 text-[var(--nq-muted)] font-mono-label">
+      <span className="inline-block w-4 h-px bg-[var(--nq-cyan)]/40" />
       {text}
-      <span className="flex-1 h-px opacity-20" style={{ background: color }} />
+      <span className="flex-1 h-px bg-white/10" />
     </div>
   );
 }
 
-function XPBar({ xp, maxXp, color }: { xp: number; maxXp: number; color: string }) {
+function ProgressBar({
+  value,
+  max,
+  color,
+  delay = 0,
+}: {
+  value: number;
+  max: number;
+  color: string;
+  delay?: number;
+}) {
   const [width, setWidth] = useState(0);
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      setWidth((xp / maxXp) * 100);
-    }, 300);
+      setWidth((value / max) * 100);
+    }, delay);
     return () => clearTimeout(timer);
-  }, [xp, maxXp, color]);
+  }, [value, max, delay]);
 
   return (
-    <div className="w-full h-2 rounded-full overflow-hidden" style={{ background: "rgba(255,255,255,0.06)" }}>
+    <div className="nq-progress-track">
       <div
-        className="h-full rounded-full transition-all duration-1000"
+        className="nq-progress-fill"
         style={{
           width: `${width}%`,
           background: `linear-gradient(90deg, ${color}88, ${color})`,
-          boxShadow: `0 0 8px ${color}`,
+          boxShadow: `0 0 6px ${color}44`,
         }}
       />
     </div>
   );
 }
 
-function SkillBar({ name, level, xp, color }: { name: string; level: number; xp: number; color: string }) {
-  const [barWidth, setBarWidth] = useState(0);
-  const MAX = 5;
-
-  useEffect(() => {
-    const t = setTimeout(() => setBarWidth(xp), 400);
-    return () => clearTimeout(t);
-  }, [xp]);
-
+function SkillRow({
+  name,
+  level,
+  max,
+  color,
+  delay,
+}: {
+  name: string;
+  level: number;
+  max: number;
+  color: string;
+  delay: number;
+}) {
   return (
-    <div className="flex items-center gap-3">
-      <span
-        className="text-[9px] font-bold tracking-widest shrink-0 w-36"
-        style={{ color }}
-      >
-        {name}
-      </span>
-      {/* Segment bars */}
-      <div className="flex gap-1 flex-1">
-        {Array.from({ length: MAX }).map((_, i) => (
-          <div
-            key={i}
-            className="h-1.5 flex-1 rounded-sm transition-all duration-500"
-            style={{
-              background: i < level ? color : "rgba(255,255,255,0.06)",
-              boxShadow: i < level ? `0 0 4px ${color}` : "none",
-              transitionDelay: `${i * 70}ms`,
-            }}
-          />
-        ))}
+    <div className="space-y-1.5">
+      <div className="flex items-center justify-between gap-3 text-xs">
+        <span className="font-medium" style={{ color }}>
+          {name}
+        </span>
+        <span className="text-[var(--nq-muted)] font-mono-label">
+          {level}/{max}
+        </span>
       </div>
-      <span className="text-[9px] font-mono w-8 text-right" style={{ color: `${color}99` }}>
-        {level}/{MAX}
-      </span>
+      <ProgressBar value={level} max={max} color={color} delay={delay} />
     </div>
   );
 }
 
-// ─── Main Component ───────────────────────────────────────────────────────────
-
 export default function PlayerStats() {
+  const HeroIcon = ACTIVE_HERO.Icon;
+
   return (
     <section className="landing-section">
       <div className="landing-container">
-
         <header className="landing-section-header">
-          <p className="landing-eyebrow" style={{ color: "#00f5ff" }}>
-            Player profile
-          </p>
-          <h2 className="landing-heading">
-            Your <span className="text-cyan-400">stats</span>
+          <p className="landing-eyebrow">// player_profile.sys</p>
+          <h2 className="landing-heading font-display">
+            Your <span className="text-[var(--nq-cyan)]">stats</span>
           </h2>
           <p className="landing-subheading">
-            Track progress, earn XP, and level up your AI skills.
+            ติดตามความก้าวหน้า สะสม XP และอัปเลเวลทักษะ AI ของคุณ
           </p>
         </header>
 
-        {/* Player card */}
-        <div
-          className="rounded-2xl overflow-hidden relative max-w-2xl mx-auto"
-          style={{
-            background: "linear-gradient(140deg, rgba(0,245,255,0.06) 0%, rgba(5,5,16,0.97) 55%)",
-            border: "1px solid rgba(0,245,255,0.18)",
-            boxShadow: "0 0 28px rgba(0,245,255,0.05)",
-          }}
-        >
-          {/* Scan line */}
-          <div className="absolute inset-0 scan-line-anim pointer-events-none" />
+        <div className="nq-card overflow-hidden relative max-w-4xl mx-auto">
+          <div className="absolute top-0 left-0 w-8 h-8 pointer-events-none border-t-2 border-l-2 border-[var(--nq-cyan)]/30 rounded-tl-2xl" />
+          <div className="absolute bottom-0 right-0 w-8 h-8 pointer-events-none border-b-2 border-r-2 border-[var(--nq-cyan)]/30 rounded-br-2xl" />
 
-          {/* Corner accents */}
-          <div
-            className="absolute top-0 left-0 w-8 h-8 pointer-events-none"
-            style={{ borderTop: "2px solid rgba(0,245,255,0.4)", borderLeft: "2px solid rgba(0,245,255,0.4)" }}
-          />
-          <div
-            className="absolute bottom-0 right-0 w-8 h-8 pointer-events-none"
-            style={{ borderBottom: "2px solid rgba(0,245,255,0.4)", borderRight: "2px solid rgba(0,245,255,0.4)" }}
-          />
-
-          <div className="p-5 sm:p-7 space-y-6">
-
-            {/* ── Active hero row ── */}
+          <div className="p-5 sm:p-7">
+            {/* Active hero row */}
             <div
-              className="flex items-center gap-4 p-4 rounded-2xl"
+              className="flex items-center gap-4 p-4 rounded-xl mb-6"
               style={{
                 background: `${ACTIVE_HERO.color}08`,
                 border: `1px solid ${ACTIVE_HERO.color}22`,
               }}
             >
-              {/* Hero avatar */}
               <div
-                className="w-14 h-14 rounded-2xl flex items-center justify-center text-3xl shrink-0"
+                className="w-12 h-12 rounded-xl flex items-center justify-center shrink-0"
                 style={{
-                  background: `radial-gradient(circle, ${ACTIVE_HERO.color}22, transparent)`,
-                  border: `2px solid ${ACTIVE_HERO.color}44`,
-                  boxShadow: `0 0 16px ${ACTIVE_HERO.glowColor}44`,
+                  background: `${ACTIVE_HERO.color}12`,
+                  border: `1px solid ${ACTIVE_HERO.color}33`,
                 }}
               >
-                <span
-                  className="animate-float"
-                  style={{ filter: `drop-shadow(0 0 8px ${ACTIVE_HERO.color})` }}
-                >
-                  {ACTIVE_HERO.avatar}
-                </span>
+                <HeroIcon className="w-6 h-6" style={{ color: ACTIVE_HERO.color }} aria-hidden />
               </div>
 
               <div className="flex-1 min-w-0">
-                <div
-                  className="text-[8px] font-bold tracking-[0.25em] mb-0.5"
-                  style={{ color: ACTIVE_HERO.factionColor }}
-                >
-                  {ACTIVE_HERO.factionIcon} {ACTIVE_HERO.faction} · ACTIVE HERO
+                <div className="text-xs text-[var(--nq-muted)] mb-0.5">
+                  Active hero · {ACTIVE_HERO.faction}
                 </div>
-                <div
-                  className="text-base font-black tracking-wider text-white mb-0.5"
-                  style={{ textShadow: `0 0 14px ${ACTIVE_HERO.color}88` }}
-                >
-                  {ACTIVE_HERO.name}
+                <div className="text-base font-bold text-white">{ACTIVE_HERO.name}</div>
+                <div className="text-xs text-[var(--nq-muted)] italic">
+                  &ldquo;{ACTIVE_HERO.title}&rdquo;
                 </div>
-                <div className="text-[10px] text-white/40 italic">&ldquo;{ACTIVE_HERO.title}&rdquo;</div>
               </div>
 
               <Link
                 href="/heroes"
-                className="shrink-0 px-3 py-1.5 rounded-xl text-[9px] font-bold tracking-widest transition-all active:scale-95 focus:outline-none"
+                className="shrink-0 px-3 py-1.5 rounded-lg text-xs font-semibold transition-colors duration-200 cursor-pointer focus-ring"
                 style={{
-                  background: `${ACTIVE_HERO.color}14`,
-                  border: `1px solid ${ACTIVE_HERO.color}35`,
+                  background: `${ACTIVE_HERO.color}12`,
+                  border: `1px solid ${ACTIVE_HERO.color}33`,
                   color: ACTIVE_HERO.color,
                 }}
               >
-                CHANGE
+                Change
               </Link>
             </div>
 
-            {/* ── Profile row ── */}
-            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-5">
+            {/* 2-column grid on desktop */}
+            <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.1fr] gap-6 lg:gap-8">
+              {/* Left: profile + energy */}
+              <div className="space-y-5">
+                <div className="flex items-start gap-4">
+                  <div className="relative shrink-0">
+                    <div
+                      className="w-14 h-14 rounded-xl flex items-center justify-center"
+                      style={{
+                        background: "linear-gradient(135deg, rgba(0,229,255,0.12), rgba(224,64,251,0.08))",
+                        border: "1px solid var(--nq-border)",
+                      }}
+                    >
+                      <Bot className="w-7 h-7 text-[var(--nq-cyan)]" aria-hidden />
+                    </div>
+                    <div
+                      className="absolute -bottom-1 -right-1 w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold"
+                      style={{
+                        background: "var(--nq-bg)",
+                        border: "2px solid var(--nq-cyan)",
+                        color: "var(--nq-cyan)",
+                      }}
+                    >
+                      7
+                    </div>
+                  </div>
 
-              {/* Avatar */}
-              <div className="relative shrink-0">
-                <div
-                  className="w-16 h-16 rounded-2xl flex items-center justify-center text-2xl"
-                  style={{
-                    background: "linear-gradient(135deg, rgba(0,245,255,0.15), rgba(191,0,255,0.1))",
-                    border: "2px solid rgba(0,245,255,0.35)",
-                    boxShadow: "0 0 16px rgba(0,245,255,0.2)",
-                  }}
-                >
-                  🤖
+                  <div className="flex-1 min-w-0">
+                    <div className="flex items-center gap-2 mb-1 flex-wrap">
+                      <span className="text-lg font-bold text-white font-display">AGENT_001</span>
+                      <span
+                        className="text-[10px] px-2 py-0.5 rounded-full border font-semibold"
+                        style={{
+                          color: "#ff0080",
+                          borderColor: "rgba(255,0,128,0.3)",
+                          background: "rgba(255,0,128,0.1)",
+                        }}
+                      >
+                        Hacker
+                      </span>
+                    </div>
+                    <div className="text-xs text-[var(--nq-muted)] mb-3">
+                      Level 7 — Neural Initiate
+                    </div>
+
+                    <div className="space-y-1.5">
+                      <div className="flex justify-between text-xs">
+                        <span className="text-[var(--nq-muted)]">XP progress</span>
+                        <span className="text-[var(--nq-cyan)] font-mono-label">2,450 / 5,000</span>
+                      </div>
+                      <ProgressBar value={2450} max={5000} color="#00e5ff" delay={200} />
+                      <div className="text-[10px] text-[var(--nq-muted)] text-right">
+                        550 XP to level 8
+                      </div>
+                    </div>
+                  </div>
                 </div>
+
                 <div
-                  className="absolute -bottom-1 -right-1 w-6 h-6 rounded-full flex items-center justify-center font-black text-xs"
+                  className="flex items-center gap-3 p-4 rounded-xl"
                   style={{
-                    background: "#050510",
-                    border: "2px solid #00f5ff",
-                    color: "#00f5ff",
-                    boxShadow: "0 0 8px rgba(0,245,255,0.5)",
+                    background: "rgba(250,204,21,0.06)",
+                    border: "1px solid rgba(250,204,21,0.2)",
                   }}
                 >
-                  7
+                  <Zap className="w-5 h-5 text-yellow-400 shrink-0" aria-hidden />
+                  <div>
+                    <div className="text-xl font-black text-yellow-400 font-display">4/5</div>
+                    <div className="text-xs text-[var(--nq-muted)]">Energy</div>
+                  </div>
                 </div>
               </div>
 
-              {/* Name + XP */}
-              <div className="flex-1 min-w-0">
-                <div className="flex items-center gap-2 mb-1 flex-wrap">
-                  <span className="text-lg font-black text-white tracking-wider">AGENT_001</span>
-                  <span
-                    className="text-[9px] px-2 py-0.5 rounded-full border font-bold tracking-widest"
-                    style={{
-                      color: "#ff0080",
-                      borderColor: "rgba(255,0,128,0.3)",
-                      background: "rgba(255,0,128,0.1)",
-                    }}
-                  >
-                    HACKER
-                  </span>
+              {/* Right: skill tree */}
+              <div>
+                <SectionLabel text="Skill tree" />
+                <div className="space-y-4">
+                  {SKILLS.map((skill, i) => (
+                    <SkillRow key={skill.name} {...skill} delay={300 + i * 100} />
+                  ))}
                 </div>
-                <div className="text-[10px] text-white/35 mb-3 tracking-widest">
-                  LEVEL 7 — NEURAL INITIATE
-                </div>
-
-                <div className="space-y-1.5">
-                  <div className="flex justify-between text-[10px]">
-                    <span className="text-white/35 tracking-wider">XP PROGRESS</span>
-                    <span style={{ color: "#00f5ff" }}>2,450 / 3,000</span>
-                  </div>
-                  <XPBar xp={2450} maxXp={3000} color="#00f5ff" />
-                  <div className="text-[9px] text-white/25 text-right tracking-widest">
-                    550 XP TO LEVEL 8
-                  </div>
-                </div>
-              </div>
-
-              {/* Energy */}
-              <div
-                className="shrink-0 text-center p-4 rounded-2xl"
-                style={{
-                  background: "rgba(250,204,21,0.06)",
-                  border: "1px solid rgba(250,204,21,0.2)",
-                }}
-              >
-                <div className="text-xl mb-1">⚡</div>
-                <div
-                  className="text-xl font-black"
-                  style={{ color: "#facc15", textShadow: "0 0 10px rgba(250,204,21,0.6)" }}
-                >
-                  4/5
-                </div>
-                <div className="text-[9px] text-white/30 tracking-widest mt-0.5">ENERGY</div>
               </div>
             </div>
 
-            {/* ── Divider ── */}
-            <div style={{ borderTop: "1px solid rgba(0,245,255,0.08)" }} />
+            <div className="my-6 border-t border-[var(--nq-border)]" />
 
-            {/* ── Skill tree ── */}
             <div>
-              <SectionLabel text="SKILL TREE" color="#00f5ff" />
-              <div className="space-y-3">
-                {SKILLS.map((skill) => (
-                  <SkillBar key={skill.name} {...skill} />
-                ))}
-              </div>
-            </div>
-
-            {/* ── Divider ── */}
-            <div style={{ borderTop: "1px solid rgba(0,245,255,0.08)" }} />
-
-            {/* ── Achievement stats ── */}
-            <div>
-              <SectionLabel text="ACHIEVEMENTS" color="#00f5ff" />
+              <SectionLabel text="Achievements" />
               <div className="grid grid-cols-3 gap-3">
-                {ACHIEVEMENTS.map(({ icon, value, label }) => (
+                {ACHIEVEMENTS.map(({ Icon, value, label }) => (
                   <div
                     key={label}
-                    className="text-center py-4 rounded-2xl"
-                    style={{
-                      background: "rgba(255,255,255,0.03)",
-                      border: "1px solid rgba(255,255,255,0.07)",
-                    }}
+                    className="text-center py-4 px-2 rounded-xl bg-white/[0.03] border border-white/[0.07]"
                   >
-                    <div className="text-xl mb-1">{icon}</div>
-                    <div
-                      className="text-lg font-black text-white mb-0.5"
-                      style={{ textShadow: "0 0 10px rgba(0,245,255,0.3)" }}
-                    >
-                      {value}
-                    </div>
-                    <div className="text-[8px] text-white/28 tracking-widest">{label}</div>
+                    <Icon className="w-5 h-5 mx-auto mb-2 text-[var(--nq-cyan)]" aria-hidden />
+                    <div className="text-lg font-bold text-white font-display">{value}</div>
+                    <div className="text-[10px] text-[var(--nq-muted)] mt-0.5">{label}</div>
                   </div>
                 ))}
               </div>
             </div>
-
           </div>
         </div>
       </div>
